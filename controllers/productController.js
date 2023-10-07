@@ -1,12 +1,14 @@
 import productModel from "../models/productModel.js";
-
+import categoryModel from "../models/categoryModel.js";
 
 
 import fs from "fs";
 import slugify from "slugify";
+
 import dotenv from "dotenv";
 
 dotenv.config();
+
 
 
 export const createProductController = async (req, res) => {
@@ -184,7 +186,6 @@ export const updateProductController = async (req, res) => {
   }
 };
 
-
 // filters
 export const productFiltersController = async (req, res) => {
   try {
@@ -318,5 +319,3 @@ export const productCategoryController = async (req, res) => {
     });
   }
 };
-
-
