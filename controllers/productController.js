@@ -1,13 +1,19 @@
 import productModel from "../models/productModel.js";
 import categoryModel from "../models/categoryModel.js";
 
-
 import fs from "fs";
 import slugify from "slugify";
-
 import dotenv from "dotenv";
+import braintree from "braintree"
 
 dotenv.config();
+
+var gateway = new braintree.BraintreeGateway({
+  environment: braintree.Environment.Sandbox,
+  merchantId: process.env.BRAINTREE_MECHANR_ID,
+  publicKey: process.env.BRAINTREE_PUBLIC_KEY,
+  privateKey: process.env.BRAINTREE_PRIVATE_KEY,
+});
 
 
 
